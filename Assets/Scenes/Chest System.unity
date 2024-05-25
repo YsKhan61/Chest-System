@@ -241,6 +241,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1314952325}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OKButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CS.UI.PopupView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -625,6 +660,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1314952325}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuerryButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CS.UI.PopupView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -636,6 +711,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 558254148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &558254150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 558254148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &558270212
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +991,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591209467}
   m_CullTransparentMesh: 1
+--- !u!114 &658458008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 301689078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &676551049 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 660220880450362319, guid: 4da394372c7032d4ebfdd29a2846d865,
@@ -1449,12 +1548,12 @@ PrefabInstance:
     - target: {fileID: 713160546549656459, guid: 442f2830ef4b0044883fd590493b91e2,
         type: 3}
       propertyPath: m_Name
-      value: Back Button
+      value: Cancel Button
       objectReference: {fileID: 0}
     - target: {fileID: 2791373546794071449, guid: 442f2830ef4b0044883fd590493b91e2,
         type: 3}
       propertyPath: m_text
-      value: Back
+      value: Cancel
       objectReference: {fileID: 0}
     - target: {fileID: 3032602379648693361, guid: 442f2830ef4b0044883fd590493b91e2,
         type: 3}
@@ -1556,6 +1655,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1314952325}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuerryButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CS.UI.PopupView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1567,6 +1701,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1173233501}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173233503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6424711114596323195, guid: 442f2830ef4b0044883fd590493b91e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1173233501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1314952320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1725,7 @@ GameObject:
   - component: {fileID: 1314952323}
   - component: {fileID: 1314952322}
   - component: {fileID: 1314952324}
+  - component: {fileID: 1314952325}
   m_Layer: 5
   m_Name: Popup Panel
   m_TagString: Untagged
@@ -1668,6 +1815,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1314952325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314952320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e898f12ff61074d4c9fb87f682610e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CancelButton: {fileID: 1173233503}
+  m_OkButton: {fileID: 658458008}
+  m_ConfirmButton: {fileID: 558254150}
+  m_Animator: {fileID: 1314952324}
 --- !u!1001 &1434342885
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -63,7 +63,7 @@ AnimatorController:
   m_Name: Popup Panel
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: IsDown
+  - m_Name: Panel_Down
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -91,7 +91,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsDown
+    m_ConditionEvent: Panel_Down
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3858599278249131773}
@@ -143,7 +143,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: IsDown
+    m_ConditionEvent: Panel_Down
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2491995490342555686}
@@ -196,7 +196,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsDown
+    m_ConditionEvent: Panel_Down
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3858599278249131773}
