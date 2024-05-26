@@ -18,5 +18,6 @@ MonoBehaviour:
   m_GemRange: {x: 10, y: 20}
   m_OpenTime: 3
   m_SpawnChance: 70
+  m_MaxCost: 10
   m_Prefab: {fileID: 7126515279925512467, guid: 5850767d546a31c47807f22ff64ae49e,
     type: 3}

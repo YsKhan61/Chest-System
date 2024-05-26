@@ -227,9 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8712c4f23f58cce45adea54bb702ddff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EmptySlotButton: {fileID: 5938104903127329841}
-  m_ChestFactoryContainer: {fileID: 11400000, guid: a89522e48ac674940901cfe378462d86,
-    type: 2}
+  m_ChestSlotButton: {fileID: 5938104903127329841}
+  m_ChestSlotButtonText: {fileID: 1751964329465813905}
 --- !u!1 &8082596678723920707
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +241,7 @@ GameObject:
   - component: {fileID: 8417416735090328398}
   - component: {fileID: 5938104903127329841}
   m_Layer: 5
-  m_Name: Empty Slot Button
+  m_Name: Interact Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +321,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1752409194169032272}
         m_TargetAssemblyTypeName: CS.UI.ChestSlotView, Assembly-CSharp
-        m_MethodName: OnEmptySlotButtonClicked
+        m_MethodName: OnChestSlotButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

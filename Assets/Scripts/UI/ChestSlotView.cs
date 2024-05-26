@@ -1,6 +1,8 @@
 ﻿using CS.ChestSystem;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 namespace CS.UI
 {
@@ -10,6 +12,8 @@ namespace CS.UI
     /// </summary>
     public class ChestSlotView : MonoBehaviour
     {
+        private const string TAP_TO_GET = "Tap to get!";
+
         public enum State
         {
             Empty,
@@ -19,22 +23,18 @@ namespace CS.UI
         }
 
 
-        [SerializeField, Tooltip("The button that shows up when there is no chest in the slot!")]
-        private Button m_EmptySlotButton;
+        [SerializeField, Tooltip("The button to access chest!")]
+        private Button m_ChestSlotButton;
 
-        [SerializeField, Tooltip("The Chest Factory Contianer")]
-        private ChestFactoryContainerSO m_ChestFactoryContainer;
+        [SerializeField, Tooltip("The text of the button")]
+        private TextMeshProUGUI m_ChestSlotButtonText;
 
+
+        private ChestService m_ChestService;
         private ChestController m_Chest;
         private State m_CurrentState;
 
         private float m_TimeElapsed;
-
-        private void OnEnable()
-        {
-            m_ChestFactoryContainer.Initialize();
-            m_CurrentState = State.Empty;
-        }
 
         private void Update()
         {
@@ -65,19 +65,49 @@ namespace CS.UI
             }
         }
 
-        private void OnDisable()
+        /// <summary>
+        /// Set the chest service
+        /// </summary>
+        public void SetChestService(ChestService service) => m_ChestService = service;
+
+        /// <summary>
+        /// Start the slot in empty state
+        /// </summary>
+        public void StartEmptyState()
         {
-            m_ChestFactoryContainer.ResetContainer();
+            m_CurrentState = State.Empty;
+            m_ChestSlotButtonText.text = TAP_TO_GET;
+            m_TimeElapsed = 0;
         }
 
         /// <summary>
         /// This method is called when the button is clicked
         /// </summary>
-        public void OnEmptySlotButtonClicked()
+        public void OnChestSlotButtonClicked()
         {
-            CreateChestAndLockIt();
-            m_EmptySlotButton.gameObject.SetActive(false);
-            m_CurrentState = State.Locked;
+            switch (m_CurrentState)
+            {
+                case State.Empty:
+                    CreateChestAndLockIt();
+                    m_ChestSlotButton.transform.SetAsLastSibling();
+                    m_ChestSlotButtonText.text = "";
+                    m_CurrentState = State.Locked;
+                    break;
+
+                case State.Locked:
+                    m_Chest.EnterUnlockingState();
+                    m_CurrentState = State.Unlocking;
+                    break;
+
+                case State.Unlocking:
+                    break;
+
+                case State.Unlocked:
+                    m_ChestService.CollectChest(m_Chest);
+                    m_Chest = null;
+                    StartEmptyState();
+                    break;
+            }
         }
 
         /// <summary>
@@ -86,13 +116,13 @@ namespace CS.UI
         public void CLearSlot()
         {
             m_Chest = null;
-            m_EmptySlotButton.gameObject.SetActive(true);
+            m_ChestSlotButton.gameObject.SetActive(true);
         }
 
         private void CreateChestAndLockIt()
         {
             // Create
-            m_Chest = m_ChestFactoryContainer.GetRandomChest();
+            m_Chest = m_ChestService.CreateChest();
             m_Chest.SpawnView(transform);
 
             // Lock
