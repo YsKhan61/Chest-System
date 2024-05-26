@@ -175,6 +175,8 @@ MonoBehaviour:
   m_ChestFactoryContainer: {fileID: 11400000, guid: a89522e48ac674940901cfe378462d86,
     type: 2}
   m_PopupView: {fileID: 1314952325}
+  m_CoinsContainer: {fileID: 11400000, guid: dfcaffcdfd6ba1f4a841d314451b6e20, type: 2}
+  m_GemsContainer: {fileID: 11400000, guid: c303b3c2b8d93634b838db26613b6f34, type: 2}
 --- !u!1001 &301689078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1879,6 +1881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e898f12ff61074d4c9fb87f682610e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MessageText: {fileID: 1150865425}
   m_CancelButton: {fileID: 1173233503}
   m_OkButton: {fileID: 658458008}
   m_ConfirmButton: {fileID: 558254150}
@@ -3098,6 +3101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752409194169032272, guid: 4da394372c7032d4ebfdd29a2846d865,
+        type: 3}
+      propertyPath: m_UnlockInAdvanceMessage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7834416043427120877, guid: 4da394372c7032d4ebfdd29a2846d865,
         type: 3}

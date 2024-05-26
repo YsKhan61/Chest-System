@@ -19,6 +19,7 @@ namespace CS.UI
             Empty,
             Locked,
             Unlocking,
+            UnlockingPaused,
             Unlocked
         }
 
@@ -32,35 +33,25 @@ namespace CS.UI
 
         private ChestService m_ChestService;
         private ChestController m_Chest;
+        public ChestController Chest => m_Chest;
+
         private State m_CurrentState;
 
         private float m_TimeElapsed;
 
         private void Update()
         {
-            switch(m_CurrentState)
+            switch (m_CurrentState)
             {
-                case State.Empty:
-
-                    break;
-
-                case State.Locked:
-                    
-                    break;
-
                 case State.Unlocking:
                     if (m_TimeElapsed >= m_Chest.Data.OpenTime)
                     {
-                        m_CurrentState = State.Unlocked;
-                        m_Chest.EnterUnlockedState();
+                        EnterUnlockedState();
                         return;
                     }
                     m_TimeElapsed += Time.deltaTime;
                     m_Chest.UpdateTimer(m_TimeElapsed);
-                    break;
-
-                case State.Unlocked:
-                    
+                    m_Chest.UpdateCost(m_TimeElapsed);
                     break;
             }
         }
@@ -71,13 +62,27 @@ namespace CS.UI
         public void SetChestService(ChestService service) => m_ChestService = service;
 
         /// <summary>
-        /// Start the slot in empty state
+        /// Enter the Empty state
         /// </summary>
-        public void StartEmptyState()
+        public void EnterEmptyState()
         {
             m_CurrentState = State.Empty;
             m_ChestSlotButtonText.text = TAP_TO_GET;
             m_TimeElapsed = 0;
+        }
+
+        /// <summary>
+        /// Enter the Unlocked state
+        /// </summary>
+        public void EnterUnlockedState()
+        {
+            m_CurrentState = State.Unlocked;
+            m_Chest.EnterUnlockedState();
+        }
+
+        public void ResumeUnlocking()
+        {
+            m_CurrentState = State.Unlocking;
         }
 
         /// <summary>
@@ -88,35 +93,21 @@ namespace CS.UI
             switch (m_CurrentState)
             {
                 case State.Empty:
-                    CreateChestAndLockIt();
-                    m_ChestSlotButton.transform.SetAsLastSibling();
-                    m_ChestSlotButtonText.text = "";
-                    m_CurrentState = State.Locked;
+                    OnChestSlotButtonClickedOnEmptyState();
                     break;
 
                 case State.Locked:
-                    m_Chest.EnterUnlockingState();
-                    m_CurrentState = State.Unlocking;
+                    OnChestSlotButtonClickedOnLockedState();
                     break;
 
                 case State.Unlocking:
+                    OnChestSlotButtonClickedOnUnlockingState();
                     break;
 
                 case State.Unlocked:
-                    m_ChestService.CollectChest(m_Chest);
-                    m_Chest = null;
-                    StartEmptyState();
+                    OnChestSlotButtonClickedOnUnlockedState();
                     break;
             }
-        }
-
-        /// <summary>
-        /// This method is called to clear the slot
-        /// </summary>
-        public void CLearSlot()
-        {
-            m_Chest = null;
-            m_ChestSlotButton.gameObject.SetActive(true);
         }
 
         private void CreateChestAndLockIt()
@@ -127,6 +118,39 @@ namespace CS.UI
 
             // Lock
             m_Chest.EnterLockedState();
+        }
+
+        private void OnChestSlotButtonClickedOnEmptyState()
+        {
+            CreateChestAndLockIt();
+            m_ChestSlotButton.transform.SetAsLastSibling();
+            m_ChestSlotButtonText.text = "";
+            m_CurrentState = State.Locked;
+        }
+
+
+        private void OnChestSlotButtonClickedOnLockedState()
+        {
+            if (m_ChestService.IsUnlockingChest)
+                return;
+
+            m_ChestService.SetUnlockingChestSlot(this);
+            m_Chest.EnterUnlockingState();
+            m_CurrentState = State.Unlocking;
+        }
+
+        private void OnChestSlotButtonClickedOnUnlockingState()
+        {
+            string message = $"Do you want to unlock the chest in advance for {m_Chest.CurrentCost} coins?";
+            m_CurrentState = State.UnlockingPaused;
+            m_ChestService.SetPopupQuerryToUnlockInAdvanced(message);
+        }
+
+        private void OnChestSlotButtonClickedOnUnlockedState()
+        {
+            m_ChestService.CollectChest(m_Chest);
+            m_Chest = null;
+            EnterEmptyState();
         }
     }
 }

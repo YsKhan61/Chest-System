@@ -16,7 +16,8 @@ namespace CS.ChestSystem
         public ChestDataSO Data => m_Data;
 
         private ChestView m_View;
-
+        private int m_CurrentCost;
+        public int CurrentCost => m_CurrentCost;
 
 
         public ChestController(ChestDataSO data) => m_Data = data;
@@ -54,7 +55,13 @@ namespace CS.ChestSystem
                 timeSpan.Minutes,
                 timeSpan.Seconds);
             m_View.SetTimeLeftText(formattedTime);
+        }
 
+        public void UpdateCost(float timeElapsed)
+        {
+            // Count the cost based on the time elapsed. The more the time elapsed, the less the cost. Use Mathf.CeilToInt to round up the cost.
+            m_CurrentCost = Mathf.CeilToInt(m_Data.MaxCost * (1 - timeElapsed / m_Data.OpenTime));
+            m_View.SetCostText(m_CurrentCost.ToString());
         }
 
         public void EnterUnlockingState()

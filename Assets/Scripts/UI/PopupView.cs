@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,9 @@ namespace CS.UI
         /// Used to set the animation's bool of the popup panel
         private const string PANEL_DOWN = "Panel_Down";
 
+
+        [SerializeField, Tooltip("The text UI to display the message")]
+        private TextMeshProUGUI m_MessageText;
 
         [SerializeField, Tooltip("The button to cancel the popup querry.")]
         private Button m_CancelButton;
@@ -51,6 +55,7 @@ namespace CS.UI
             m_CancelButton.gameObject.SetActive(true);
             m_OkButton.gameObject.SetActive(false);
             m_ConfirmButton.gameObject.SetActive(true);
+            m_MessageText.text = message;
         }
 
 
@@ -66,6 +71,7 @@ namespace CS.UI
             m_CancelButton.gameObject.SetActive(false);
             m_OkButton.gameObject.SetActive(true);
             m_ConfirmButton.gameObject.SetActive(false);
+            m_MessageText.text = message;
         }
 
 
@@ -75,8 +81,9 @@ namespace CS.UI
         /// <param name="isConfirmed"></param>
         public void QuerryButtonPressed(bool isConfirmed)
         {
-            OnQuerryButtonPressed?.Invoke(isConfirmed);
             m_Animator.SetBool(PANEL_DOWN, false);
+            m_MessageText.text = "";
+            OnQuerryButtonPressed?.Invoke(isConfirmed);
         }
 
 
@@ -85,8 +92,9 @@ namespace CS.UI
         /// </summary>
         public void OKButtonPressed()
         {
-            OnOKButtonPressed?.Invoke();
             m_Animator.SetBool(PANEL_DOWN, false);
+            m_MessageText.text = "";
+            OnOKButtonPressed?.Invoke();
         }
     }
 }
