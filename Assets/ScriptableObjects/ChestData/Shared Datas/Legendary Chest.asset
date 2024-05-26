@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb1ce3fa7e13ff4dbcd9cb449f3ca98, type: 3}
   m_Name: Legendary Chest
   m_EditorClassIdentifier: 
+  m_ClosedIcon: {fileID: 21300000, guid: f97b68f3c2a7c3144b8d3a1a560cf92c, type: 3}
+  m_OpenIcon: {fileID: 21300000, guid: 19bbfc17e3532cd46a0861bee7faab8f, type: 3}
   m_CoinRange: {x: 1000, y: 1200}
   m_GemRange: {x: 80, y: 100}
   m_OpenTime: 20
   m_SpawnChance: 10
+  m_Prefab: {fileID: 7126515279925512467, guid: 5850767d546a31c47807f22ff64ae49e,
+    type: 3}

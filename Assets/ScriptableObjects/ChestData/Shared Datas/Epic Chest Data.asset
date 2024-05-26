@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb1ce3fa7e13ff4dbcd9cb449f3ca98, type: 3}
   m_Name: Epic Chest Data
   m_EditorClassIdentifier: 
+  m_ClosedIcon: {fileID: 21300000, guid: bb2f04e566237604b8e00029c2df6cef, type: 3}
+  m_OpenIcon: {fileID: 21300000, guid: e7fd0ae9f4d713642811d26bab7e9c65, type: 3}
   m_CoinRange: {x: 600, y: 800}
   m_GemRange: {x: 45, y: 60}
   m_OpenTime: 10
   m_SpawnChance: 30
+  m_Prefab: {fileID: 7126515279925512467, guid: 5850767d546a31c47807f22ff64ae49e,
+    type: 3}
