@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7a1b50dcd16d14f8595e4c0d5538cc, type: 3}
+  m_Name: ChestFactoryContainer
+  m_EditorClassIdentifier: 
+  m_Factories:
+  - {fileID: 11400000, guid: 661de9c636a41d2498d91a30fcde2514, type: 2}
+  - {fileID: 11400000, guid: fde82d24bcb727b48a1f5af760ba36e1, type: 2}
+  - {fileID: 11400000, guid: 40f770a0cd7f3df46912e20f9b460647, type: 2}
+  - {fileID: 11400000, guid: abeab5db70d65d44293f1c9fa3c462ac, type: 2}
