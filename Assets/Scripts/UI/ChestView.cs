@@ -72,7 +72,6 @@ namespace CS.UI
         /// <summary>
         /// Toggle the cost panel
         /// </summary>
-        /// <param name="value"></param>
         public void ToggleCostPanel(bool value) => m_CostPanel.SetActive(value);
 
 

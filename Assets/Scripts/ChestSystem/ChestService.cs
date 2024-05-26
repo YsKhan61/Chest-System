@@ -33,14 +33,8 @@ namespace CS.ChestSystem
 
         private void Start()
         {
-            m_CoinsContainer.SetData(0);
-            m_GemsContainer.SetData(0);
-
-            foreach (var chestSlotView in m_ChestSlotViews)
-            {
-                chestSlotView.SetChestService(this);
-                chestSlotView.EnterEmptyState();
-            }
+            ResetDatas();
+            InitializeChestSlots();
         }
 
         private void OnDisable()
@@ -67,6 +61,8 @@ namespace CS.ChestSystem
         public void CollectChest(ChestController m_Chest)
         {
             m_PopupView.ShowMessage("Chest Collected!");
+
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.ChestOpen);
 
             AddCoins(m_Chest);
             AddGems(m_Chest);
@@ -124,6 +120,21 @@ namespace CS.ChestSystem
         {
             data += container.Data;
             container.SetData(data);
+        }
+
+        private void ResetDatas()
+        {
+            m_CoinsContainer.SetData(0);
+            m_GemsContainer.SetData(0);
+        }
+
+        private void InitializeChestSlots()
+        {
+            foreach (var chestSlotView in m_ChestSlotViews)
+            {
+                chestSlotView.SetChestService(this);
+                chestSlotView.EnterEmptyState();
+            }
         }
     }
 }

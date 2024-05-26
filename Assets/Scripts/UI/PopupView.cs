@@ -56,6 +56,8 @@ namespace CS.UI
             m_OkButton.gameObject.SetActive(false);
             m_ConfirmButton.gameObject.SetActive(true);
             m_MessageText.text = message;
+
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.Popup);
         }
 
 
@@ -72,6 +74,8 @@ namespace CS.UI
             m_OkButton.gameObject.SetActive(true);
             m_ConfirmButton.gameObject.SetActive(false);
             m_MessageText.text = message;
+
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.Popup);
         }
 
 
@@ -84,6 +88,8 @@ namespace CS.UI
             m_Animator.SetBool(PANEL_DOWN, false);
             m_MessageText.text = "";
             OnQuerryButtonPressed?.Invoke(isConfirmed);
+
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.Popup);
         }
 
 
@@ -95,6 +101,8 @@ namespace CS.UI
             m_Animator.SetBool(PANEL_DOWN, false);
             m_MessageText.text = "";
             OnOKButtonPressed?.Invoke();
+
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.Popup);
         }
     }
 }

@@ -14,6 +14,14 @@ namespace CS.UI
     {
         private const string TAP_TO_GET = "Tap to get!";
 
+        /// <summary>
+        /// States of the Chest Slot
+        /// Empty - No chest in the slot
+        /// Locked - Chest is in the slot but locked
+        /// Unlocking - Chest is in the slot and unlocking
+        /// UnlockingPaused - Chest is in the slot and unlocking but paused
+        /// Unlocked - Chest is in the slot and unlocked and ready to collect
+        /// </summary>
         public enum State
         {
             Empty,
@@ -30,14 +38,13 @@ namespace CS.UI
         [SerializeField, Tooltip("The text of the button")]
         private TextMeshProUGUI m_ChestSlotButtonText;
 
-
-        private ChestService m_ChestService;
         private ChestController m_Chest;
         public ChestController Chest => m_Chest;
 
+        private ChestService m_ChestService;
         private State m_CurrentState;
-
         private float m_TimeElapsed;
+
 
         private void Update()
         {
@@ -56,10 +63,12 @@ namespace CS.UI
             }
         }
 
+
         /// <summary>
         /// Set the chest service
         /// </summary>
         public void SetChestService(ChestService service) => m_ChestService = service;
+
 
         /// <summary>
         /// Enter the Empty state
@@ -71,6 +80,7 @@ namespace CS.UI
             m_TimeElapsed = 0;
         }
 
+
         /// <summary>
         /// Enter the Unlocked state
         /// </summary>
@@ -78,18 +88,27 @@ namespace CS.UI
         {
             m_CurrentState = State.Unlocked;
             m_Chest.EnterUnlockedState();
+
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.ChestUnlocked);
         }
 
+
+        /// <summary>
+        /// Resume the unlocking of the chest
+        /// </summary>
         public void ResumeUnlocking()
         {
             m_CurrentState = State.Unlocking;
         }
+
 
         /// <summary>
         /// This method is called when the button is clicked
         /// </summary>
         public void OnChestSlotButtonClicked()
         {
+            UIAudioService.Instance.PlayAudio(UIAudioService.AudioType.Button);
+
             switch (m_CurrentState)
             {
                 case State.Empty:
@@ -109,6 +128,7 @@ namespace CS.UI
                     break;
             }
         }
+
 
         private void CreateChestAndLockIt()
         {
@@ -153,4 +173,5 @@ namespace CS.UI
             EnterEmptyState();
         }
     }
+
 }
