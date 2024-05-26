@@ -1,3 +1,4 @@
+using CS.ChestSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,6 @@ namespace CS.UI
     /// </summary>
     public class ChestView : MonoBehaviour
     {
-        [SerializeField, Tooltip("The button that shows up when there is no chest in the slot!")]
-        private Button m_EmptySlotButton;
-
         [SerializeField, Tooltip("The button that shows up when there is a chest in the slot!")]
         private Button m_ChestSlotButton;
 
@@ -32,5 +30,24 @@ namespace CS.UI
 
         [SerializeField, Tooltip("The panel that shows the cost to open the chest in advance!")]
         private TextMeshProUGUI m_CostText;
+
+
+        /// <summary>
+        /// Set the sprite of the chest image
+        /// </summary>
+        public void SetChestImageSprite(Sprite sprite) => m_ChestImage.sprite = sprite;
+    
+        /// <summary>
+        /// Set the time needed to open the chest
+        /// </summary>
+        public void SetTimer(string time) => m_TimeText.text = time;
+
+        /// <summary>
+        /// Toggle the timer slider
+        /// </summary>
+        public void ToggleTimerSlider(bool value) => m_ProgressSlider.gameObject.SetActive(value);
+    
+
+    
     }
 }

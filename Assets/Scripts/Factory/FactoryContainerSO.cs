@@ -14,7 +14,7 @@ namespace CS.Factory
         where T : IFactoryItem
     {
         [SerializeField, Tooltip("The factories to create the items")]
-        List<FactorySO<T>> m_Factories;
+        protected List<FactorySO<T>> m_Factories;
 
         /// <summary>
         /// Get the item from the factory based on the item tag

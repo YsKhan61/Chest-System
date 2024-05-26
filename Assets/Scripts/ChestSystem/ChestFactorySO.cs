@@ -12,6 +12,7 @@ namespace CS.ChestSystem
     {
         [SerializeField, Tooltip("The ChestData to create the Chest objects")]
         private ChestDataSO m_ChestData;
+        public int SpawnChance => m_ChestData.SpawnChance;
 
         public override ChestController GetItem() => new ChestController(m_ChestData);
     }
