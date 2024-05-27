@@ -58,7 +58,7 @@ namespace CS.ChestSystem
                 return null;
             }
 
-            int random = Random.Range(0, 100);
+            int random = Random.Range(0, m_TotalWeight);
             int currentWeight = 0;
 
             foreach (ChestFactorySO factory in m_Factories)
